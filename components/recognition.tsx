@@ -10,7 +10,7 @@ const recognitions = [
     title: 'Published GovStack Interoperability Use Case',
     description:
       'GovStack published GovBot as a conversational AI use case demonstrating streamlined citizen access to eCitizen services.',
-    image: '/recognition/govstack.svg',
+    image: '/recognition/Govstack.svg',
     link: 'https://govstack.gitbook.io/use-cases/use-cases/ai-chatbot-discoverability-government-services',
   },
   {
@@ -18,7 +18,7 @@ const recognitions = [
     title: 'NMWSO Safety by Design Challenge',
     description:
       'Awarded by the National Models for Women’s Safety Online for its safety-by-design approach from inception.',
-    image: '/recognition/nmwso.svg',
+    image: '/recognition/NMWSO.svg',
     link: 'https://www.irex.org/project/national-models-womens-safety-online-nmwso',
   },
   {
