@@ -1,5 +1,5 @@
 'use client'
-
+import Image from 'next/image'
 import { Button } from '@/components/ui/button'
 import Link from 'next/link'
 export function GovStackAlignment() {
@@ -97,27 +97,19 @@ export function GovStackAlignment() {
 
           {/* Illustration */}
 
-          <div className="flex items-center justify-center rounded-3xl border border-purple-200 bg-white p-12 shadow-xl">
+          {/* Workflow Illustration */}
 
-            <div className="text-center">
+<div className="order-2 lg:order-1 overflow-hidden rounded-3xl bg-white border border-purple-200 shadow-xl">
 
-              <div className="mx-auto mb-6 flex h-24 w-24 items-center justify-center rounded-full bg-purple-100">
+  <Image
+    src="/images/DPI.png"
+    alt="How GovBot Works"
+    width={1400}
+    height={1000}
+    className="w-full h-auto object-contain"
+  />
 
-                <div className="h-12 w-12 rounded-xl bg-[#6E3CBC]" />
-
-              </div>
-
-              <h3 className="text-xl font-semibold text-[#341A5A]">
-                GovStack
-              </h3>
-
-              <p className="mt-2 text-gray-600">
-                Digital Public Infrastructure
-              </p>
-
-            </div>
-
-          </div>
+</div>
 
         </div>
 

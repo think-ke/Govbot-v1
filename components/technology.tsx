@@ -1,5 +1,5 @@
 'use client'
-
+import Image from 'next/image'
 export function Technology() {
   const stack = [
     'NLP/NLU + RAG',
@@ -18,27 +18,27 @@ export function Technology() {
 
         <div className="grid items-center gap-16 lg:grid-cols-2">
 
-          {/* Visualization */}
-
-          <div className="flex items-center justify-center rounded-3xl border border-white/10 bg-white/5 p-12 backdrop-blur-sm shadow-2xl">
-
-            <div className="text-center">
-
-              <div className="mx-auto mb-6 flex h-24 w-24 items-center justify-center rounded-full bg-white/10">
-
-                <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-white">
-                  <div className="h-7 w-7 rounded-md bg-[#6A3AA8]" />
-                </div>
-
-              </div>
-
-              <p className="text-sm tracking-wide text-gray-300">
-                Technology Stack Visualization
-              </p>
-
-            </div>
-
-          </div>
+          <div
+  className="
+    overflow-hidden
+    rounded-3xl
+    bg-white
+    border
+    border-purple-200
+    shadow-[0_25px_80px_rgba(0,0,0,0.18)]
+    transition-all
+    duration-300
+    hover:scale-[1.01]
+  "
+>
+  <Image
+    src="/images/gov-stack.png"
+    alt="GovStack Technology Architecture"
+    width={1400}
+    height={1000}
+    className="w-full h-auto object-contain"
+  />
+</div>
 
           {/* Content */}
 

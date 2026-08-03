@@ -1,7 +1,7 @@
 'use client'
 
 import { Check } from 'lucide-react'
-
+import Image from 'next/image'
 export function Collaboration() {
   const points = [
     'Designed for different government agencies to collaborate seamlessly.',
@@ -41,27 +41,18 @@ export function Collaboration() {
 
           {/* Illustration */}
 
-          <div className="flex items-center justify-center rounded-[32px] border border-purple-100 bg-[#F7F2FC] p-12 shadow-lg h-[450px]">
 
-            <div className="text-center">
+<div className="order-2 lg:order-1 overflow-hidden rounded-3xl bg-white border border-purple-200 shadow-xl">
 
-              <div className="mx-auto mb-6 flex h-28 w-28 items-center justify-center rounded-full bg-white shadow-md">
+  <Image
+    src="/images/collab.png"
+    alt="How GovBot Works"
+    width={1400}
+    height={1000}
+    className="w-full h-auto object-contain"
+  />
 
-                <div className="h-14 w-14 rounded-xl bg-[#6E3CBC]" />
-
-              </div>
-
-              <h3 className="text-2xl font-semibold text-[#341A5A]">
-                Collaboration Network
-              </h3>
-
-              <p className="mt-3 text-lg text-[#6B5A88]">
-                Government • Partners • Citizens
-              </p>
-
-            </div>
-
-          </div>
+</div>
 
           {/* Benefits */}
 

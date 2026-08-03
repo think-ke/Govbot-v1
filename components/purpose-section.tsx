@@ -1,5 +1,5 @@
 'use client'
-
+import Image from 'next/image'
 export function PurposeSection() {
   return (
     <section className="bg-white py-24 px-6 lg:px-8" id="purpose">
@@ -64,23 +64,17 @@ export function PurposeSection() {
 
           </div>
 
-          {/* Image */}
+          {/* Purpose Illustration */}
 
-          <div className="flex items-center justify-center rounded-3xl border border-purple-100 bg-purple-50 h-[450px] shadow-lg">
+          <div className="overflow-hidden rounded-3xl bg-white border border-purple-200 shadow-xl">
 
-            <div className="text-center">
-
-              <div className="mx-auto mb-6 flex h-24 w-24 items-center justify-center rounded-full bg-purple-100">
-
-                <div className="h-12 w-12 rounded-xl bg-[#6E3CBC]" />
-
-              </div>
-
-              <p className="text-lg text-[#6B5A88]">
-                Team Photo
-              </p>
-
-            </div>
+            <Image
+              src="/recognition/NMWSO.svg"
+              alt="GovBot Digital Ecosystem"
+              width={1400}
+              height={1100}
+              className="w-full h-auto object-contain"
+            />
 
           </div>
 
@@ -92,21 +86,17 @@ export function PurposeSection() {
 
           {/* Image */}
 
-          <div className="order-2 lg:order-1 flex items-center justify-center rounded-3xl border border-purple-100 bg-purple-50 h-[450px] shadow-lg">
+          {/* Workflow Illustration */}
 
-            <div className="text-center">
+          <div className="order-2 lg:order-1 overflow-hidden rounded-3xl bg-white border border-purple-200 shadow-xl">
 
-              <div className="mx-auto mb-6 flex h-24 w-24 items-center justify-center rounded-full bg-purple-100">
-
-                <div className="h-12 w-12 rounded-xl bg-[#6E3CBC]" />
-
-              </div>
-
-              <p className="text-lg text-[#6B5A88]">
-                Workflow Illustration
-              </p>
-
-            </div>
+            <Image
+              src="/images/tech-stack.png"
+              alt="Tech Stack"
+              width={1400}
+              height={1000}
+              className="w-full h-auto object-contain"
+            />
 
           </div>
 
