@@ -10,13 +10,24 @@ COPY . .
 
 RUN npm run build
 
+# ----------------------------
 
-FROM nginx:alpine
+FROM node:22-alpine
 
-COPY nginx.conf /etc/nginx/conf.d/default.conf
+WORKDIR /app
 
-COPY --from=builder /app/dist /usr/share/nginx/html
+ENV NODE_ENV=production
+
+COPY --from=builder /app/package*.json ./
+
+RUN npm ci --omit=dev
+
+COPY --from=builder /app/.next ./.next
+COPY --from=builder /app/public ./public
+COPY --from=builder /app/node_modules ./node_modules
+COPY --from=builder /app/next.config.* ./
+COPY --from=builder /app/package.json ./
 
 EXPOSE 3000
 
-CMD ["nginx", "-g", "daemon off;"]
+CMD ["npm","start"]
