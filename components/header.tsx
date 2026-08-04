@@ -31,135 +31,169 @@ export function Header() {
         </Link>
 
         {/* Navigation */}
-        <nav className="hidden lg:flex items-center gap-10">
+        <nav className="hidden lg:flex items-center">
 
-          {/* Home Dropdown */}
-          <div className="group relative">
+          <div
+            className="
+      flex items-center
+      rounded-full
+      border border-white/70
+      bg-white/70
+      p-2
+      shadow-xl
+      backdrop-blur-xl
+    "
+          >
 
-            <button
-              className="flex items-center gap-2 text-[17px] font-medium text-gray-900 transition-colors duration-200 hover:text-purple-700"
-            >
-              Home
+            {/* ================= HOME ================= */}
+            <div className="group relative">
 
-              <svg
-                className="h-4 w-4 transition-transform duration-200 group-hover:rotate-180"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-                viewBox="0 0 24 24"
-              >
-                <path d="M6 9l6 6 6-6" />
-              </svg>
-            </button>
-
-            {/* Dropdown */}
-            <div
-              className="
-        invisible
-        absolute
-        left-0
-        top-full
-        mt-3
-        w-64
-        rounded-2xl
-        border
-        border-purple-100
-        bg-white
-        p-3
-        opacity-0
-        shadow-2xl
-        transition-all
-        duration-300
-        group-hover:visible
-        group-hover:opacity-100
-      "
-            >
-              <Link
-                href="#home"
-                className="block rounded-xl px-4 py-3 text-gray-700 transition hover:bg-purple-50 hover:text-purple-700"
+              <button
+                className="
+          flex items-center gap-2
+          rounded-full
+          bg-[#7B4BB7]
+          px-6
+          py-2
+          text-lg
+          font-semibold
+          text-white
+          shadow-md
+          transition-all
+          duration-300
+          hover:bg-[#6A3AA8]
+        "
               >
                 Home
-              </Link>
 
-              <Link
-                href="#features"
-                className="block rounded-xl px-4 py-3 text-gray-700 transition hover:bg-purple-50 hover:text-purple-700"
-              >
-                Features
-              </Link>
+                <svg
+                  className="h-5 w-5 transition-transform duration-300 group-hover:rotate-180"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2.5"
+                  viewBox="0 0 24 24"
+                >
+                  <path d="M6 9l6 6 6-6" />
+                </svg>
+              </button>
 
-              <Link
-                href="#technology"
-                className="block rounded-xl px-4 py-3 text-gray-700 transition hover:bg-purple-50 hover:text-purple-700"
+              {/* Dropdown */}
+              <div
+                className="
+          invisible
+          absolute
+          left-0
+          top-full
+          mt-4
+          w-72
+          rounded-3xl
+          border
+          border-purple-100
+          bg-white
+          p-3
+          opacity-0
+          shadow-2xl
+          transition-all
+          duration-300
+          group-hover:visible
+          group-hover:opacity-100
+        "
               >
-                Technology
-              </Link>
+                <Link
+                  href="#home"
+                  className="block rounded-xl px-4 py-3 text-gray-600 transition hover:bg-purple-50 hover:text-purple-700"
+                >
+                  Home
+                </Link>
 
-              <Link
-                href="#purpose"
-                className="block rounded-xl px-4 py-3 text-gray-700 transition hover:bg-purple-50 hover:text-purple-700"
-              >
-                Purpose
-              </Link>
+                <Link
+                  href="#features"
+                  className="block rounded-xl px-4 py-3 text-gray-600 transition hover:bg-purple-50 hover:text-purple-700"
+                >
+                  Features
+                </Link>
 
-              <Link
-                href="#govstack"
-                className="block rounded-xl px-4 py-3 text-gray-700 transition hover:bg-purple-50 hover:text-purple-700"
-              >
-                GovStack Alignment
-              </Link>
+                <Link
+                  href="#technology"
+                  className="block rounded-xl px-4 py-3 text-gray-600 transition hover:bg-purple-50 hover:text-purple-700"
+                >
+                  Technology
+                </Link>
 
-              <Link
-                href="#agencies"
-                className="block rounded-xl px-4 py-3 text-gray-700 transition hover:bg-purple-50 hover:text-purple-700"
-              >
-                Supported Agencies
-              </Link>
+                <Link
+                  href="#purpose"
+                  className="block rounded-xl px-4 py-3 text-gray-600 transition hover:bg-purple-50 hover:text-purple-700"
+                >
+                  Purpose
+                </Link>
 
-              <Link
-                href="#privacy"
-                className="block rounded-xl px-4 py-3 text-gray-700 transition hover:bg-purple-50 hover:text-purple-700"
-              >
-                Privacy & Security
-              </Link>
+                <Link
+                  href="#govstack"
+                  className="block rounded-xl px-4 py-3 text-gray-600 transition hover:bg-purple-50 hover:text-purple-700"
+                >
+                  GovStack Alignment
+                </Link>
 
-              <Link
-                href="#recognition"
-                className="block rounded-xl px-4 py-3 text-gray-700 transition hover:bg-purple-50 hover:text-purple-700"
-              >
-                Recognition
-              </Link>
+                <Link
+                  href="#agencies"
+                  className="block rounded-xl px-4 py-3 text-gray-600 transition hover:bg-purple-50 hover:text-purple-700"
+                >
+                  Supported Agencies
+                </Link>
+
+                <Link
+                  href="#collaboration"
+                  className="block rounded-xl px-4 py-3 text-gray-600 transition hover:bg-purple-50 hover:text-purple-700"
+                >
+                  Collaborations
+                </Link>
+                <Link
+                  href="#privacy"
+                  className="block rounded-xl px-4 py-3 text-gray-600 transition hover:bg-purple-50 hover:text-purple-700"
+                >
+                  Privacy & Security
+                </Link>
+
+
+                <Link
+                  href="#recognition"
+                  className="block rounded-xl px-4 py-3 text-gray-600 transition hover:bg-purple-50 hover:text-purple-700"
+                >
+                  Recognition
+                </Link>
+              </div>
 
             </div>
+
+            {/* ================= THINK ================= */}
+
+            <Link
+              href="https://think.ke"
+              target="_blank"
+              className="
+        rounded-full
+        px-10
+        py-2
+        text-lg
+        font-medium
+        text-gray-500
+        transition-all
+        duration-300
+        hover:bg-white
+        hover:text-[#7B4BB7]
+      "
+            >
+              THiNK
+            </Link>
+
           </div>
-
-          <Link
-            href="https://think.ke/"
-            className="text-[17px] font-medium text-gray-900 transition hover:text-purple-700"
-          >
-            Think
-          </Link>
-
-          <Link
-            href="https://playbook.think.ke/books/govbot-playbook"
-            className="text-[17px] font-medium text-gray-900 transition hover:text-purple-700"
-          >
-            Docs
-          </Link>
 
         </nav>
 
         {/* Right Buttons */}
         <div className="flex items-center gap-5">
 
-          <Link
-            href="https://playbook.think.ke/books/govbot-playbook"
-            className="hidden lg:inline-block text-lg font-semibold text-gray-900 transition hover:text-purple-700"
-          >
-            Playbook
-          </Link>
-
-          <Link href="https://think.ke">
+          <Link href="https://playbook.think.ke/books/govbot-playbook">
             <Button
               className="
               h-14
@@ -174,7 +208,7 @@ export function Header() {
               hover:opacity-90
             "
             >
-              Studio
+              Playbook
             </Button>
           </Link>
         </div>
