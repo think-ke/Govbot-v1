@@ -108,7 +108,7 @@ export function PrivacySecurity() {
 
         {/* Button */}
         <div className="mt-10 flex justify-center">
-          <Link href="http://thinkit-bot-of-bot-xviqck-7bc702-144-91-120-217.sslip.io/">
+          <Link href="https://websites-thinklab-rmc6gi-13a19e-144-91-120-217.sslip.io/">
             <Button
               className="
                 h-11
