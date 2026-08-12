@@ -1,5 +1,6 @@
 import { Analytics } from '@vercel/analytics/next'
 import type { Metadata, Viewport } from 'next'
+import Script from 'next/script'
 import './globals.css'
 import { Ubuntu, Inter } from "next/font/google";
 export const metadata: Metadata = {
@@ -53,6 +54,28 @@ export default function RootLayout({
       <body className="antialiased text-foreground">
         {children}
         {process.env.NODE_ENV === 'production' && <Analytics />}
+        
+        {/* THiNKiT Chat Widget */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.ChatbotConfig = {
+                botId: "a1022b9e-2bc5-499f-96e2-97e3a1105e90",
+                apiBaseUrl: "https://web.staging.think.ke",
+                title: "GovBot",
+                subtitle: "How can I help you?",
+                welcomeMessage: "How can I help you today?",
+                placeholder: "Type your question...",
+                primaryColor: "#804b99",
+                logoUrl: "https://s3.think.ke/public/Logo%20+%20Icon%20/think-logo.png"
+              };
+            `
+          }}
+        />
+        <script 
+          src="https://web.staging.think.ke/widget/chatbot-widget.min.js" 
+          async
+        />
       </body>
     </html>
   )
