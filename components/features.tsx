@@ -17,7 +17,7 @@ const features = [
   },
   {
     title: 'Voice & Text Interface',
-    description: 'WhatsApp compatible and web interface',
+    description: 'On the web interface',
     icon: MessageCircle,
   },
   {

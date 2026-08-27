@@ -113,7 +113,7 @@ export function PurposeSection() {
             </h2>
 
             <p className="mt-6 text-lg leading-8 text-[#6B5A88]">
-              Citizens interact with GovBot through WhatsApp or the
+              Citizens interact with GovBot through the
               web portal. Artificial intelligence understands each request,
               identifies the appropriate service, and guides the user through the
               entire process.

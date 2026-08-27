@@ -6,7 +6,7 @@ export function GovStackAlignment() {
   const alignments = [
     {
       area: 'Messaging',
-      details: 'WhatsApp and chatbot communication channels.',
+      details: 'Chatbot communication channels.',
     },
     {
       area: 'Data Exchange',
