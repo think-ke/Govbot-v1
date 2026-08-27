@@ -48,9 +48,8 @@ export function Technology() {
               Technology
             </h2>
 
-            <p className="mb-10 text-lg leading-8 text-gray-300">
-              GovBot is built on a modern, scalable architecture that powers
-              Kenya&apos;s digital government services. It provides enterprise-grade
+            <p className="mb-10 text-lg leading-8 text-white">
+              GovBot is built on a modern, scalable architecture that powers digital government services. It provides enterprise-grade
               security, high availability, seamless integrations, and reliable
               performance across multiple platforms.
             </p>
@@ -70,7 +69,7 @@ export function Technology() {
 
                   </div>
 
-                  <span className="text-lg text-gray-200">
+                  <span className="text-lg text-white">
                     {item}
                   </span>
 

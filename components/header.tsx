@@ -16,7 +16,7 @@ export function Header() {
     bg-transparent
     backdrop-blur-md
   "
-    >      <div className="mx-auto flex h-[88px] max-w-7xl items-center justify-between px-6 lg:px-8">
+    >      <div className="mx-auto flex h-[72px] max-w-7xl items-center justify-between px-6 lg:px-8">
 
         {/* Logo */}
         <Link href="/" className="flex-shrink-0">
@@ -26,7 +26,7 @@ export function Header() {
             width={185}
             height={100}
             priority
-            className="h-15 w-auto"
+            className="h-12 w-auto"
           />
         </Link>
 
@@ -53,9 +53,9 @@ export function Header() {
           flex items-center gap-2
           rounded-full
           bg-[#7B4BB7]
-          px-6
+          px-4
           py-2
-          text-lg
+          text-sm
           font-semibold
           text-white
           shadow-md
@@ -172,9 +172,9 @@ export function Header() {
               target="_blank"
               className="
         rounded-full
-        px-10
+        px-8
         py-2
-        text-lg
+        text-sm
         font-medium
         text-gray-500
         transition-all
@@ -196,13 +196,13 @@ export function Header() {
           <Link href="https://playbook.think.ke/books/govbot-playbook">
             <Button
               className="
-              h-14
+              h-12
               rounded-2xl
               bg-gradient-to-r
               from-[#7B3FBF]
               to-[#143C8B]
               px-8
-              text-lg
+              text-sm
               font-semibold
               text-white
               hover:opacity-90

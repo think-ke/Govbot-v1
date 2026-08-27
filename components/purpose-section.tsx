@@ -22,7 +22,7 @@ export function PurposeSection() {
             </h2>
 
             <p className="mt-6 text-lg leading-8 text-[#6B5A88]">
-              To simplify access to government services for Kenyan citizens by
+              To simplify access to government services for citizens by
               creating an intelligent digital gateway that reduces bureaucracy,
               improves transparency, and strengthens citizen engagement.
             </p>
@@ -113,7 +113,7 @@ export function PurposeSection() {
             </h2>
 
             <p className="mt-6 text-lg leading-8 text-[#6B5A88]">
-              Citizens interact with GovBot through WhatsApp, SMS, or the
+              Citizens interact with GovBot through WhatsApp or the
               web portal. Artificial intelligence understands each request,
               identifies the appropriate service, and guides the user through the
               entire process.

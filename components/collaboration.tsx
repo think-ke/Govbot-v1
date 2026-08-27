@@ -30,7 +30,7 @@ export function Collaboration() {
             Collaboration is at the heart of GovBot. By bringing together
             government agencies, development partners, and technology providers,
             GovBot creates a unified digital ecosystem that improves public
-            service delivery across Kenya.
+            service delivery.
           </p>
 
         </div>

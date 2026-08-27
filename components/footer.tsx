@@ -42,7 +42,7 @@ export function Footer() {
             </h3>
 
             <p className="mt-4 max-w-sm text-[15px] leading-7 text-purple-200/70">
-              Kenya's intelligent gateway to government services.
+              An intelligent gateway to government services.
               Built by THiNK to improve accessibility, transparency,
               and digital public service delivery through trusted AI.
             </p>
