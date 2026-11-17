@@ -1,4 +1,5 @@
-'use client'
+
+"use client";
 
 import {
   MessageCircle,
@@ -7,110 +8,94 @@ import {
   BarChart3,
   FileText,
   Shield,
-} from 'lucide-react'
+} from "lucide-react";
 
 const features = [
   {
-    title: 'Multi-Language Support',
-    description: 'English & Swahili support',
+    title: "Multi-Language Support",
+    description: "Communicate and discover services in supported languages.",
     icon: Globe,
+    number: "01",
   },
   {
-    title: 'Voice & Text Interface',
-    description: 'On the web interface',
+    title: "Voice & Text Interface",
+    description: "Interact naturally through conversational voice and text.",
     icon: MessageCircle,
+    number: "02",
   },
   {
-    title: 'Fast Response',
-    description: 'Instant service discovery',
+    title: "Intelligent Responses",
+    description: "Understand requests and find relevant government information.",
     icon: Zap,
+    number: "03",
   },
   {
-    title: 'Analytics Dashboard',
-    description: 'Real-time insights & metrics',
+    title: "Analytics Dashboard",
+    description: "Generate insights into engagement and service interactions.",
     icon: BarChart3,
+    number: "04",
   },
   {
-    title: 'Document Support',
-    description: 'Handle various document types',
+    title: "Document Support",
+    description: "Make government documentation and requirements easier to navigate.",
     icon: FileText,
+    number: "05",
   },
   {
-    title: 'System Integrations',
-    description: 'Seamless API connectivity',
+    title: "System Integrations",
+    description: "Connect with government systems through API-based architecture.",
     icon: Shield,
+    number: "06",
   },
-]
+];
 
 export function Features() {
   return (
-    <section
-      id="features"
-      className="bg-white py-24 px-6 lg:px-8"
-    >
-      <div className="mx-auto max-w-7xl">
+    <section id="features" className="section-padding bg-white">
+      <div className="section-container">
 
-        {/* Heading */}
+        <div className="mb-16 max-w-2xl">
+          <span className="think-eyebrow">Capabilities</span>
 
-        <div className="mx-auto mb-16 max-w-3xl text-center">
-
-          <h2 className="text-4xl md:text-5xl font-bold text-[#341A5A]">
-            Key Features
+          <h2 className="mt-6 font-heading text-4xl font-bold tracking-tight text-[#201c28] md:text-5xl">
+            Key
+            <span className="text-[#70427e]"> Features</span>
           </h2>
 
-          <p className="mt-5 text-lg leading-8 text-[#6B5A88]">
-            Comprehensive capabilities designed to simplify citizen
-            access to government services through intelligent,
-            secure and accessible technology.
+          <p className="mt-6 text-base leading-8 text-[#6f6975]">
+            Comprehensive capabilities designed to simplify citizen access to government services through intelligent, secure and accessible technology.
           </p>
-
         </div>
 
-        {/* Cards */}
-
-        <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-
-          {features.map((feature, index) => {
-            const Icon = feature.icon
-
-            return (
-              <div
-                key={index}
-                className="
-                  group
-                  rounded-2xl
-                  border
-                  border-purple-100
-                  bg-white
-                  p-8
-                  shadow-sm
-                  transition-all
-                  duration-300
-                  hover:-translate-y-2
-                  hover:border-purple-300
-                  hover:shadow-xl
-                "
-              >
-                <div className="mb-6 flex h-16 w-16 items-center justify-center rounded-2xl bg-purple-100 transition group-hover:bg-purple-600">
-
-                  <Icon className="h-8 w-8 text-[#6E3CBC] group-hover:text-white" />
-
+        <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+          {features.map(({ title, description, icon: Icon, number }) => (
+            <article
+              key={number}
+              className="think-card group relative overflow-hidden p-7"
+            >
+              <div className="flex items-start justify-between">
+                <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-[#f5eafa] text-[#70427e] transition-colors group-hover:bg-[#70427e] group-hover:text-white">
+                  <Icon className="h-5 w-5" />
                 </div>
 
-                <h3 className="mb-3 text-xl font-semibold text-[#341A5A]">
-                  {feature.title}
-                </h3>
-
-                <p className="leading-7 text-[#6B5A88]">
-                  {feature.description}
-                </p>
-
+                <span className="font-heading text-sm text-[#c4b8c8]">
+                  {number}
+                </span>
               </div>
-            )
-          })}
 
+              <h3 className="mt-8 font-heading text-xl font-bold text-[#201c28]">
+                {title}
+              </h3>
+
+              <p className="mt-3 text-sm leading-7 text-[#6f6975]">
+                {description}
+              </p>
+
+            </article>
+          ))}
         </div>
+
       </div>
     </section>
-  )
+  );
 }

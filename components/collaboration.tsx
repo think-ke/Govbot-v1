@@ -1,87 +1,106 @@
-'use client'
+import Image from "next/image";
+import {
+  Building2,
+  Share2,
+  Workflow,
+  ShieldCheck,
+  ArrowUpRight,
+} from "lucide-react";
 
-import { Check } from 'lucide-react'
-import Image from 'next/image'
+const collaborationPoints = [
+  {
+    number: "01",
+    title:
+      "Designed for different government agencies to collaborate seamlessly.",
+    icon: Building2,
+  },
+  {
+    number: "02",
+    title:
+      "Encourages information sharing and institutional capacity building.",
+    icon: Share2,
+  },
+  {
+    number: "03",
+    title:
+      "Streamlines cross-agency workflows and digital service delivery.",
+    icon: Workflow,
+  },
+  {
+    number: "04",
+    title:
+      "Promotes secure data interoperability and system integration.",
+    icon: ShieldCheck,
+  },
+];
+
 export function Collaboration() {
-  const points = [
-    'Designed for different government agencies to collaborate seamlessly.',
-    'Encourages information sharing and institutional capacity building.',
-    'Streamlines cross-agency workflows and digital service delivery.',
-    'Promotes secure data interoperability and system integration.',
-  ]
-
   return (
-    <section className="bg-white py-24 px-6 lg:px-8" id="collaboration">
-      <div className="mx-auto max-w-7xl">
-
-        {/* Heading */}
-
-        <div className="mx-auto mb-20 max-w-4xl text-center">
-
-          <span className="text-sm font-semibold uppercase tracking-widest text-purple-600">
-            Partnerships
-          </span>
-
-          <h2 className="mt-4 text-4xl md:text-5xl font-bold text-[#341A5A]">
-            Collaboration & Development
-          </h2>
-
-          <p className="mt-6 text-lg leading-8 text-gray-700">
-            Collaboration is at the heart of GovBot. By bringing together
-            government agencies, development partners, and technology providers,
-            GovBot creates a unified digital ecosystem that improves public
-            service delivery.
-          </p>
-
-        </div>
-
-        {/* Content */}
-
-        <div className="grid items-center gap-16 lg:grid-cols-2">
-
-          {/* Illustration */}
-
-
-<div className="order-2 lg:order-1 overflow-hidden rounded-3xl bg-white border border-purple-200 shadow-xl">
-
-  <Image
-    src="/images/collab.png"
-    alt="How GovBot Works"
-    width={1400}
-    height={1000}
-    className="w-full h-auto object-contain"
-  />
-
-</div>
-
-          {/* Benefits */}
-
-          <div className="space-y-5">
-
-            {points.map((point, index) => (
-              <div
-                key={index}
-                className="flex gap-5 rounded-2xl border border-purple-100 bg-white p-6 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-md"
-              >
-
-                <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-full bg-purple-100">
-
-                  <Check className="h-6 w-6 text-purple-700" />
-
-                </div>
-
-                <p className="text-lg leading-8 text-gray-800">
-                  {point}
-                </p>
-
-              </div>
-            ))}
-
+    <section
+      id="collaboration"
+      className="section-padding bg-white"
+    >
+      <div className="section-container">
+        <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-20">
+          <div className="think-card overflow-hidden bg-[#fbfaf7] p-4 sm:p-6">
+            <div className="relative aspect-[5/4] w-full">
+              <Image
+                src="/images/collab.png"
+                alt="Illustration representing collaboration around GovBot"
+                fill
+                sizes="(max-width: 1024px) 100vw, 50vw"
+                className="object-contain"
+              />
+            </div>
           </div>
 
-        </div>
+          <div>
+            <span className="think-eyebrow">Partnerships</span>
 
+            <h2 className="mt-5 font-heading text-4xl font-bold leading-tight tracking-tight text-[#201c28] md:text-5xl">
+              Collaboration &amp; Development
+            </h2>
+
+            <p className="mt-5 text-base leading-8 text-[#6f6975]">
+              Collaboration is at the heart of GovBot. By bringing together
+              government agencies, development partners, and technology
+              providers, GovBot creates a unified digital ecosystem that
+              improves public service delivery.
+            </p>
+
+            <p className="mt-6 font-heading text-sm font-semibold uppercase tracking-[0.16em] text-[#70427e]">
+              How GovBot Works
+            </p>
+
+            <div className="mt-3 divide-y divide-[#eae3eb]">
+              {collaborationPoints.map(({ number, title, icon: Icon }) => (
+                <div key={number} className="flex gap-4 py-5 first:pt-0">
+                  <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[#f5eafa] text-[#70427e]">
+                    <Icon className="h-4 w-4" />
+                  </div>
+
+                  <div className="flex flex-1 items-start gap-3">
+                    <span className="mt-1 font-heading text-xs font-bold text-[#a58aaf]">
+                      {number}
+                    </span>
+                    <h3 className="font-heading text-base font-semibold leading-7 text-[#201c28]">
+                      {title}
+                    </h3>
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            <a
+              href="mailto:info@think.ke"
+              className="mt-8 inline-flex items-center gap-2 text-sm font-semibold text-[#70427e] transition-colors hover:text-[#593466] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#70427e] focus-visible:ring-offset-4"
+            >
+              Explore collaboration
+              <ArrowUpRight className="h-4 w-4" />
+            </a>
+          </div>
+        </div>
       </div>
     </section>
-  )
+  );
 }

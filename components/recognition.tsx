@@ -1,147 +1,94 @@
-'use client'
-
-import Image from 'next/image'
-import { ArrowRight } from 'lucide-react'
-import Link from 'next/link'
+import Image from "next/image";
+import { ArrowUpRight } from "lucide-react";
 
 const recognitions = [
   {
-    category: 'Infrastructure',
-    title: 'Published GovStack Interoperability Use Case',
+    category: "Infrastructure",
+    title: "Published GovStack Interoperability Use Case",
     description:
-      'GovStack published GovBot as a conversational AI use case demonstrating streamlined citizen access to eCitizen services.',
-    image: '/recognition/Govstack.svg',
-    link: 'https://govstack.gitbook.io/use-cases/use-cases/ai-chatbot-discoverability-government-services',
+      "GovStack published GovBot as a conversational AI use case demonstrating streamlined citizen access to eCitizen services.",
+    image: "/recognition/Govstack.svg",
+    link: "https://govstack.gitbook.io/use-cases/use-cases/ai-chatbot-discoverability-government-services",
+    linkLabel: "Learn More",
   },
   {
-    category: 'Awards',
-    title: 'NMWSO Safety by Design Challenge',
+    category: "Awards",
+    title: "NMWSO Safety by Design Challenge",
     description:
-      'Awarded by the National Models for Women’s Safety Online for its safety-by-design approach from inception.',
-    image: '/recognition/NMWSO.svg',
-    link: 'https://www.irex.org/project/national-models-womens-safety-online-nmwso',
+      "Awarded by the National Models for Women’s Safety Online for its safety-by-design approach from inception.",
+    image: "/recognition/NMWSO.svg",
+    link: "https://www.irex.org/project/national-models-womens-safety-online-nmwso",
+    linkLabel: "Learn More",
   },
   {
-    category: 'Recognition',
-    title: 'IRCAI Top 100 AI Solutions in Africa',
+    category: "Recognition",
+    title: "IRCAI Top 100 AI Solutions in Africa",
     description:
-      'Recognized by UNESCO IRCAI among Africa’s Top 100 AI solutions driving sustainable development.',
-    image: '/recognition/IRCAI.svg',
-    link: 'https://ircai.org/gt_category/kenya/',
+      "Recognized by UNESCO IRCAI among Africa’s Top 100 AI solutions driving sustainable development.",
+    image: "/recognition/IRCAI.svg",
+    link: "https://ircai.org/gt_category/kenya/",
+    linkLabel: "Learn More",
   },
-]
+];
 
 export function Recognition() {
   return (
-    <section className="bg-white py-28 px-6 lg:px-8" id="recognition">
-      <div className="mx-auto max-w-7xl">
+    <section id="recognition" className="section-padding bg-[#fbfaf7]">
+      <div className="section-container">
+        <div className="mb-12 max-w-2xl">
+          <span className="think-eyebrow">Recognition &amp; ecosystem</span>
 
-        {/* Badge */}
-
-        <div className="flex justify-center">
-
-          <span className="rounded-full border border-purple-300 px-5 py-2 text-sm font-semibold text-[#341A5A]">
-            Proven Impact
-          </span>
-
-        </div>
-
-        {/* Heading */}
-
-        <div className="mx-auto mt-8 max-w-4xl text-center">
-
-          <h2 className="text-5xl md:text-6xl font-bold leading-tight text-[#341A5A]">
-            Recognized by leaders in AI
-            <br />
-            and digital infrastructure
+          <h2 className="mt-5 font-heading text-4xl font-bold tracking-tight text-[#201c28] md:text-5xl">
+            Part of a wider conversation.
           </h2>
 
-          <p className="mx-auto mt-8 max-w-3xl text-xl leading-9 text-gray-700">
-            GovBot is trusted by innovators, regulators, and builders shaping
-            Kenya's digital future.
+          <p className="mt-5 text-base leading-8 text-[#6f6975]">
+            GovBot sits within a wider ecosystem of work on digital public
+            infrastructure, responsible technology and AI for public benefit.
           </p>
-
         </div>
 
-        {/* Cards */}
-
-        <div className="mt-20 grid gap-8 lg:grid-cols-3">
-
-          {recognitions.map((item, index) => (
-
+        <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+          {recognitions.map((item) => (
             <article
-              key={index}
-              className="
-                overflow-hidden
-                rounded-3xl
-                border
-                border-purple-100
-                bg-[#F8F3FC]
-                shadow-sm
-                transition-all
-                duration-300
-                hover:-translate-y-2
-                hover:shadow-2xl
-              "
+              key={item.title}
+              className="think-card flex h-full flex-col overflow-hidden p-6"
             >
-
-              {/* Image */}
-
-              <div className="relative h-60">
-
+              <div className="mb-8 flex h-24 w-full items-center">
                 <Image
                   src={item.image}
                   alt={item.title}
-                  fill
-                  className="object-cover"
+                  width={240}
+                  height={120}
+                  className="h-full w-auto max-w-full object-contain object-left"
                 />
-
               </div>
 
-              {/* Content */}
+              <span className="text-xs font-semibold uppercase tracking-[0.14em] text-[#8a6a96]">
+                {item.category}
+              </span>
 
-              <div className="p-8">
+              <h3 className="mt-3 font-heading text-xl font-semibold text-[#201c28]">
+                {item.title}
+              </h3>
 
-                <span className="text-sm font-semibold uppercase tracking-wide text-[#6E3CBC]">
-                  {item.category}
-                </span>
+              <p className="mt-3 flex-1 text-sm leading-7 text-[#6f6975]">
+                {item.description}
+              </p>
 
-                <h3 className="mt-4 text-4xl font-semibold leading-tight text-[#341A5A]">
-                  {item.title}
-                </h3>
-
-                <p className="mt-6 text-lg leading-8 text-gray-700">
-                  {item.description}
-                </p>
-
-                <Link
-  href={item.link}
-  target="_blank"
-  rel="noopener noreferrer"
-  className="
-    mt-8
-    inline-flex
-    items-center
-    gap-2
-    font-semibold
-    text-[#341A5A]
-    transition
-    hover:text-purple-700
-  "
->
-  Learn More
-  <ArrowRight className="h-5 w-5" />
-</Link>
-
-              </div>
-
+              <a
+                href={item.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-[#70427e] transition-colors hover:text-[#593466] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#70427e] focus-visible:ring-offset-4"
+              >
+                {item.linkLabel}
+                <ArrowUpRight className="h-4 w-4" />
+              </a>
             </article>
-
           ))}
-
         </div>
-
       </div>
     </section>
-  )
+  );
 }

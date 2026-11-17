@@ -1,217 +1,81 @@
+
 "use client";
 
 import Image from "next/image";
 import Link from "next/link";
+import { ArrowUpRight, ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 export function Header() {
   return (
-    <header
-      className="
-    fixed
-    top-0
-    left-0
-    right-0
-    z-50
-    bg-transparent
-    backdrop-blur-md
-  "
-    >      <div className="mx-auto flex h-[72px] max-w-7xl items-center justify-between px-6 lg:px-8">
+    <header className="fixed inset-x-0 top-0 z-50 px-4 pt-4">
+      <div className="mx-auto flex h-[72px] max-w-7xl items-center justify-between rounded-2xl border border-[#eae3eb]/80 bg-[#fbfaf7]/85 px-5 shadow-[0_8px_35px_rgba(40,25,50,0.05)] backdrop-blur-xl md:px-8">
 
-        {/* Logo */}
         <Link href="/" className="flex-shrink-0">
           <Image
             src="/images/think-logo.svg"
             alt="THiNK"
-            width={185}
-            height={100}
+            width={170}
+            height={70}
             priority
-            className="h-12 w-auto"
+            className="h-10 w-auto"
           />
         </Link>
 
-        {/* Navigation */}
-        <nav className="hidden lg:flex items-center">
+        <nav className="hidden items-center gap-8 lg:flex">
+          <div className="group relative">
+            <button className="flex items-center gap-2 text-sm font-semibold text-[#70427e]">
+              GovBot
+              <ChevronDown className="h-4 w-4 transition group-hover:rotate-180" />
+            </button>
 
-          <div
-            className="
-      flex items-center
-      rounded-full
-      border border-white/70
-      bg-white/70
-      p-2
-      shadow-xl
-      backdrop-blur-xl
-    "
-          >
-
-            {/* ================= HOME ================= */}
-            <div className="group relative">
-
-              <button
-                className="
-          flex items-center gap-2
-          rounded-full
-          bg-[#7B4BB7]
-          px-4
-          py-2
-          text-sm
-          font-semibold
-          text-white
-          shadow-md
-          transition-all
-          duration-300
-          hover:bg-[#6A3AA8]
-        "
-              >
-                Home
-
-                <svg
-                  className="h-5 w-5 transition-transform duration-300 group-hover:rotate-180"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2.5"
-                  viewBox="0 0 24 24"
-                >
-                  <path d="M6 9l6 6 6-6" />
-                </svg>
-              </button>
-
-              {/* Dropdown */}
-              <div
-                className="
-          invisible
-          absolute
-          left-0
-          top-full
-          mt-4
-          w-72
-          rounded-3xl
-          border
-          border-purple-100
-          bg-white
-          p-3
-          opacity-0
-          shadow-2xl
-          transition-all
-          duration-300
-          group-hover:visible
-          group-hover:opacity-100
-        "
-              >
-                <Link
-                  href="#home"
-                  className="block rounded-xl px-4 py-3 text-gray-600 transition hover:bg-purple-50 hover:text-purple-700"
-                >
-                  Home
-                </Link>
-
-                <Link
-                  href="#features"
-                  className="block rounded-xl px-4 py-3 text-gray-600 transition hover:bg-purple-50 hover:text-purple-700"
-                >
-                  Features
-                </Link>
-
-                <Link
-                  href="#technology"
-                  className="block rounded-xl px-4 py-3 text-gray-600 transition hover:bg-purple-50 hover:text-purple-700"
-                >
-                  Technology
-                </Link>
-
-                <Link
-                  href="#purpose"
-                  className="block rounded-xl px-4 py-3 text-gray-600 transition hover:bg-purple-50 hover:text-purple-700"
-                >
-                  Purpose
-                </Link>
-
-                <Link
-                  href="#govstack"
-                  className="block rounded-xl px-4 py-3 text-gray-600 transition hover:bg-purple-50 hover:text-purple-700"
-                >
-                  GovStack Alignment
-                </Link>
-
-                <Link
-                  href="#agencies"
-                  className="block rounded-xl px-4 py-3 text-gray-600 transition hover:bg-purple-50 hover:text-purple-700"
-                >
-                  Supported Agencies
-                </Link>
-
-                <Link
-                  href="#collaboration"
-                  className="block rounded-xl px-4 py-3 text-gray-600 transition hover:bg-purple-50 hover:text-purple-700"
-                >
-                  Collaborations
-                </Link>
-                <Link
-                  href="#privacy"
-                  className="block rounded-xl px-4 py-3 text-gray-600 transition hover:bg-purple-50 hover:text-purple-700"
-                >
-                  Privacy & Security
-                </Link>
-
-
-                <Link
-                  href="#recognition"
-                  className="block rounded-xl px-4 py-3 text-gray-600 transition hover:bg-purple-50 hover:text-purple-700"
-                >
-                  Recognition
-                </Link>
+            <div className="invisible absolute left-0 top-full w-64 pt-4 opacity-0 transition-all group-hover:visible group-hover:opacity-100">
+              <div className="rounded-2xl border border-[#eae3eb] bg-white p-3 shadow-xl">
+                {[
+                  ["Overview", "#home"],
+                  ["Features", "#features"],
+                  ["Technology", "#technology"],
+                  ["How It Works", "#purpose"],
+                  ["Agencies", "#agencies"],
+                  ["Recognition", "#recognition"],
+                ].map(([label, href]) => (
+                  <Link
+                    key={label}
+                    href={href}
+                    className="block rounded-xl px-4 py-3 text-sm text-[#6f6975] transition hover:bg-[#f5eafa] hover:text-[#70427e]"
+                  >
+                    {label}
+                  </Link>
+                ))}
               </div>
-
             </div>
-
-            {/* ================= THINK ================= */}
-
-            <Link
-              href="https://think.ke"
-              target="_blank"
-              className="
-        rounded-full
-        px-8
-        py-2
-        text-sm
-        font-medium
-        text-gray-500
-        transition-all
-        duration-300
-        hover:bg-white
-        hover:text-[#7B4BB7]
-      "
-            >
-              THiNK
-            </Link>
-
           </div>
 
+          <Link
+            href="https://think.ke"
+            target="_blank"
+            className="text-sm text-[#6f6975] transition hover:text-[#70427e]"
+          >
+            About THiNK
+          </Link>
         </nav>
 
-        {/* Right Buttons */}
-        <div className="flex items-center gap-5">
+        <div className="flex items-center gap-3">
+          <Link
+            href="https://playbook.think.ke/books/govbot-playbook"
+            className="hidden text-sm font-medium text-[#70427e] transition hover:text-[#60356d] sm:block"
+          >
+            Playbook
+          </Link>
 
-          <Link href="https://playbook.think.ke/books/govbot-playbook">
-            <Button
-              className="
-              h-12
-              rounded-2xl
-              bg-gradient-to-r
-              from-[#7B3FBF]
-              to-[#143C8B]
-              px-8
-              text-sm
-              font-semibold
-              text-white
-              hover:opacity-90
-            "
-            >
-              Playbook
+          <Link href="https://chatbot.ecitizen.go.ke">
+            <Button className="h-10 rounded-xl bg-[#70427e] px-5 text-sm font-semibold text-white shadow-sm hover:bg-[#60356d]">
+              Explore GovBot
+              <ArrowUpRight className="ml-2 h-4 w-4" />
             </Button>
           </Link>
         </div>
+
       </div>
     </header>
   );

@@ -1,164 +1,161 @@
+
 "use client";
 
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, Globe2, Mic, MessageSquare } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import {
+  ArrowRight,
+  Globe2,
+  Mic,
+  MessageSquare,
+  Sparkles,
+} from "lucide-react";
 
 export function Hero() {
   return (
-    <section className="relative overflow-hidden bg-[#F6F0FB] pt-28 pb-24">
-      
-      {/* Background decoration */}
+    <section
+      id="home"
+      className="relative min-h-screen overflow-hidden bg-[#fbfaf7] px-6 pb-20 pt-36"
+    >
+      {/* Background atmosphere */}
       <div className="pointer-events-none absolute inset-0 overflow-hidden">
-        <div className="absolute -left-32 top-20 h-72 w-72 rounded-full bg-[#7F3FBF]/10 blur-3xl" />
-        <div className="absolute -right-32 top-40 h-96 w-96 rounded-full bg-[#003A88]/10 blur-3xl" />
 
-        <div className="absolute left-1/2 top-0 h-px w-[80%] -translate-x-1/2 bg-gradient-to-r from-transparent via-[#7F3FBF]/20 to-transparent" />
+        <div className="absolute left-1/2 top-[25%] h-[450px] w-[650px] -translate-x-1/2 rounded-full bg-[#d8b1e6]/20 blur-[120px]" />
+
+        <div className="absolute -left-40 top-20 h-96 w-96 rounded-full bg-[#c18cda]/10 blur-[100px]" />
+
+        <div className="absolute -right-40 top-80 h-96 w-96 rounded-full bg-[#70427e]/10 blur-[100px]" />
+
+        <div
+          className="absolute inset-0 opacity-[0.025]"
+          style={{
+            backgroundImage:
+              "linear-gradient(#201c28 1px, transparent 1px), linear-gradient(90deg, #201c28 1px, transparent 1px)",
+            backgroundSize: "45px 45px",
+          }}
+        />
+
+        <div className="absolute left-1/2 top-[35%] h-[400px] w-[800px] -translate-x-1/2 -translate-y-1/2 rotate-[-12deg] rounded-[50%] border border-[#70427e]/10" />
+
       </div>
 
-      <div className="relative mx-auto max-w-7xl px-6">
+      <div className="relative z-10 mx-auto max-w-7xl">
 
-        {/* ================= HERO CONTENT ================= */}
+        {/* Intro */}
+        <div className="mx-auto max-w-4xl text-center">
 
-        <div className="mx-auto max-w-5xl text-center">
-
-          {/* Product label */}
-          <div className="mb-7 inline-flex items-center gap-2 rounded-full border border-[#7F3FBF]/15 bg-white/70 px-4 py-2 text-sm font-medium text-[#6B5A88] backdrop-blur">
-            <span className="h-2 w-2 rounded-full bg-[#7F3FBF]" />
-            A THiNK DPI Product
+          <div className="think-eyebrow mb-7">
+            <Sparkles className="h-3.5 w-3.5" />
+            A THiNK Digital Public Infrastructure Product
           </div>
 
-          {/* Main heading */}
-          <h1 className="text-5xl font-bold leading-[1.05] tracking-tight text-[#2D1B44] md:text-7xl">
+          <h1 className="font-heading text-5xl font-bold leading-[1.05] tracking-[-0.045em] text-[#201c28] md:text-7xl lg:text-[82px]">
 
-            The intelligent interface
+            The Intelligent Interface
+
             <br />
 
-            <span className="bg-gradient-to-r from-[#7F3FBF] to-[#003A88] bg-clip-text text-transparent">
-              for government services.
+            <span className="text-[#70427e]">
+              for Government Services.
             </span>
 
           </h1>
 
-          {/* Description */}
-          <p className="mx-auto mt-8 max-w-3xl text-lg leading-8 text-[#6B5A88] md:text-xl">
-            GovBot helps people discover, understand, and access public
-            services through natural voice and text conversations in the
-            languages they use.
+          <p className="mx-auto mt-8 max-w-2xl text-base leading-8 text-[#6f6975] md:text-lg">
+            GovBot helps people discover, understand, and access public services
+            through natural voice and text conversations in the languages they use.
           </p>
 
-          {/* Capability pills */}
+          {/* Capabilities */}
           <div className="mt-8 flex flex-wrap justify-center gap-3">
 
-            <div className="flex items-center gap-2 rounded-full border border-[#7F3FBF]/10 bg-white px-4 py-2 text-sm text-[#2D1B44] shadow-sm">
-              <Globe2 className="h-4 w-4 text-[#7F3FBF]" />
-              Multilingual
-            </div>
-
-            <div className="flex items-center gap-2 rounded-full border border-[#7F3FBF]/10 bg-white px-4 py-2 text-sm text-[#2D1B44] shadow-sm">
-              <Mic className="h-4 w-4 text-[#7F3FBF]" />
-              Voice + Text
-            </div>
-
-            <div className="flex items-center gap-2 rounded-full border border-[#7F3FBF]/10 bg-white px-4 py-2 text-sm text-[#2D1B44] shadow-sm">
-              <MessageSquare className="h-4 w-4 text-[#7F3FBF]" />
-              Built for Governments
-            </div>
-
-          </div>
-
-          {/* CTAs */}
-          <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
-
-            <Link href="https://chatbot.ecitizen.go.ke">
-              <Button
-                className="
-                  h-14
-                  rounded-xl
-                  bg-gradient-to-r
-                  from-[#7F3FBF]
-                  to-[#003A88]
-                  px-8
-                  font-semibold
-                  text-white
-                  shadow-lg
-                  shadow-[#7F3FBF]/20
-                  transition-all
-                  hover:scale-[1.02]
-                  hover:opacity-95
-                "
+            {[
+              { icon: Globe2, label: "Multilingual" },
+              { icon: Mic, label: "Voice enabled" },
+              { icon: MessageSquare, label: "Conversational AI" },
+            ].map(({ icon: Icon, label }) => (
+              <div
+                key={label}
+                className="flex items-center gap-2 rounded-full border border-[#eae3eb] bg-white/80 px-4 py-2 text-xs font-medium text-[#6f6975] shadow-sm"
               >
-                Explore GovBot
-                <ArrowRight className="ml-2 h-5 w-5" />
-              </Button>
-            </Link>
+                <Icon className="h-4 w-4 text-[#70427e]" />
+                {label}
+              </div>
+            ))}
+
           </div>
 
+          {/* CTA */}
+          <div className="mt-9 flex flex-col items-center justify-center gap-4 sm:flex-row">
+
+            <Link
+              href="https://chatbot.ecitizen.go.ke"
+              className="group inline-flex items-center gap-3 rounded-xl bg-[#70427e] px-6 py-4 text-sm font-semibold text-white shadow-[0_8px_25px_rgba(112,66,126,0.2)] transition hover:-translate-y-1 hover:bg-[#60356d]"
+            >
+              Explore GovBot
+
+              <span className="flex h-7 w-7 items-center justify-center rounded-full bg-white text-[#70427e]">
+                <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+              </span>
+            </Link>
+
+          </div>
         </div>
 
-        {/* ================= CHAT PREVIEW ================= */}
+        {/* Chat interface */}
+        <div className="relative mx-auto mt-20 max-w-5xl">
 
-        <div className="relative mx-auto mt-20 max-w-6xl">
+          <div className="absolute inset-x-20 -bottom-10 h-32 rounded-full bg-[#70427e]/10 blur-[70px]" />
 
-          {/* Glow */}
-          <div className="absolute inset-x-20 -bottom-10 h-32 rounded-full bg-[#7F3FBF]/20 blur-3xl" />
+          <div className="relative overflow-hidden rounded-[24px] border border-[#eae3eb] bg-white p-2 shadow-[0_30px_90px_rgba(40,25,50,0.10)]">
 
-          <div className="relative overflow-hidden rounded-[28px] border border-[#2D1B44]/10 bg-white shadow-[0_30px_80px_rgba(45,27,68,0.15)]">
-
-            <div className="flex items-center justify-between border-b border-gray-100 px-5 py-4">
+            <div className="flex items-center justify-between border-b border-[#f0ebf0] px-5 py-4">
 
               <div className="flex items-center gap-3">
-                <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-[#F6F0FB]">
-                  <MessageSquare className="h-5 w-5 text-[#7F3FBF]" />
+
+                <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-[#f5eafa]">
+                  <MessageSquare className="h-5 w-5 text-[#70427e]" />
                 </div>
 
                 <div>
-                  <p className="text-sm font-semibold text-[#2D1B44]">
+                  <h3 className="font-heading text-sm font-bold text-[#201c28]">
                     GovBot
-                  </p>
-
-                  <p className="text-xs text-[#6B5A88]">
+                  </h3>
+                  <p className="text-xs text-[#9b929f]">
                     Government services assistant
                   </p>
                 </div>
+
               </div>
 
-              <div className="flex items-center gap-2 text-xs text-[#6B5A88]">
-                <span className="h-2 w-2 rounded-full bg-green-500" />
-                Available
-              </div>
+              <span className="flex items-center gap-2 text-xs text-[#6f6975]">
+                <span className="h-2 w-2 rounded-full bg-emerald-500" />
+                eCitizen ecosystem
+              </span>
 
             </div>
 
             <Image
               src="/images/govbotchat.svg"
-              alt="GovBot government services assistant interface"
+              alt="GovBot conversational interface"
               width={1800}
               height={1000}
-              className="w-full object-cover"
               priority
+              className="h-auto w-full object-contain"
             />
 
           </div>
-
         </div>
 
-        {/* ================= PROOF ================= */}
+        {/* Proof */}
+        <div className="mx-auto mt-12 flex max-w-3xl flex-col items-center justify-center gap-3 text-center">
 
-        <div className="mx-auto mt-14 max-w-4xl text-center">
-
-          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#7F3FBF]">
+          <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-[#9b63b5]">
             Proven in practice
-          </p>
+          </span>
 
-          <p className="mt-3 text-base leading-7 text-[#6B5A88]">
-            GovBot has been implemented within Kenya's
-            <span className="font-semibold text-[#2D1B44]">
-              {" "}eCitizen ecosystem
-            </span>
-            , demonstrating its application in a live digital government
-            environment.
+          <p className="text-sm leading-7 text-[#6f6975]">
+            GovBot has been implemented within Kenya's eCitizen ecosystem, demonstrating its application in a live digital government environment.
           </p>
 
         </div>

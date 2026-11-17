@@ -1,30 +1,10 @@
-import { Analytics } from '@vercel/analytics/next'
-import type { Metadata, Viewport } from 'next'
-import Script from 'next/script'
-import './globals.css'
+import type { Metadata, Viewport } from "next";
+import type { ReactNode } from "react";
 import { Ubuntu, Inter } from "next/font/google";
-export const metadata: Metadata = {
-  title: "GovBot: Kenya's Intelligent Gateway to Government Services",
-  description: 'GovBot is an AI-powered platform that simplifies access to government services in Kenya through intelligent citizen engagement.',
-  generator: 'v0.app',
-  icons: {
-    icon: [
-      {
-        url: '/icon-light-32x32.png',
-        media: '(prefers-color-scheme: light)',
-      },
-      {
-        url: '/icon-dark-32x32.png',
-        media: '(prefers-color-scheme: dark)',
-      },
-      {
-        url: '/icon.svg',
-        type: 'image/svg+xml',
-      },
-    ],
-    apple: '/apple-icon.png',
-  },
-}
+import { Analytics } from "@vercel/analytics/next";
+
+import "./globals.css";
+
 const ubuntu = Ubuntu({
   subsets: ["latin"],
   weight: ["400", "500", "700"],
@@ -36,25 +16,53 @@ const inter = Inter({
   variable: "--font-body",
 });
 
+export const metadata: Metadata = {
+  title: "GovBot: Kenya's Intelligent Gateway to Government Services",
+  description:
+    "GovBot is an AI-powered platform that simplifies access to government services in Kenya through intelligent citizen engagement.",
+  generator: "v0.app",
+  icons: {
+    icon: [
+      {
+        url: "/icon-light-32x32.png",
+        media: "(prefers-color-scheme: light)",
+      },
+      {
+        url: "/icon-dark-32x32.png",
+        media: "(prefers-color-scheme: dark)",
+      },
+      {
+        url: "/icon.svg",
+        type: "image/svg+xml",
+      },
+    ],
+    apple: "/apple-icon.png",
+  },
+};
+
 export const viewport: Viewport = {
-  colorScheme: 'light dark',
+  colorScheme: "light dark",
   themeColor: [
-    { media: '(prefers-color-scheme: light)', color: 'white' },
-    { media: '(prefers-color-scheme: dark)', color: 'black' },
+    { media: "(prefers-color-scheme: light)", color: "white" },
+    { media: "(prefers-color-scheme: dark)", color: "black" },
   ],
-}
+};
 
 export default function RootLayout({
   children,
 }: Readonly<{
-  children: React.ReactNode
+  children: ReactNode;
 }>) {
   return (
-    <html lang="en" className="bg-background scroll-smooth">
+    <html
+      lang="en"
+      className={`${ubuntu.variable} ${inter.variable} bg-background scroll-smooth`}
+    >
       <body className="antialiased text-foreground">
         {children}
-        {process.env.NODE_ENV === 'production' && <Analytics />}
-        
+
+        {process.env.NODE_ENV === "production" && <Analytics />}
+
         {/* THiNKiT Chat Widget */}
         <script
           dangerouslySetInnerHTML={{
@@ -69,14 +77,14 @@ export default function RootLayout({
                 primaryColor: "#804b99",
                 logoUrl: "https://s3.think.ke/public/Logo%20+%20Icon%20/think-logo.png"
               };
-            `
+            `,
           }}
         />
-        <script 
-          src="https://web.staging.think.ke/widget/chatbot-widget.min.js" 
+        <script
+          src="https://web.staging.think.ke/widget/chatbot-widget.min.js"
           async
         />
       </body>
     </html>
-  )
+  );
 }
